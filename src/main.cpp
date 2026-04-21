@@ -138,7 +138,11 @@ int main() {
         else if (cmd == "query_profile") { cmd_query_profile(tokens, n); }
         else if (cmd == "modify_profile") { cmd_modify_profile(tokens, n); }
         else {
-            if (cmd.rfind("query",0)==0) cout << 0 << '\n'; else cout << -1 << '\n';
+            if (cmd == "query_ticket" || cmd == "query_transfer") {
+                cout << 0 << '\n';
+            } else {
+                cout << -1 << '\n';
+            }
         }
     }
     return 0;
